@@ -45,10 +45,22 @@ seamly2d_translate.bat [ts_file] [--lang language_code]
 ```   
 
 ### Examples
-- Run with file dialog (Windows): `seamly2d_translate.bat`
-- Run with file dialog (Windows, Linux, MacOS): `python seamly2d_translate.py`
-- Run on a specific file (Windows, Linux, MacOS): `python seamly2d_translate.py ../share/translations/seamly2d_cs_CZ.ts`
-- Run with file dialog and convert to a specific language (Windows, Linux, MacOS): `python seamly2d_translate.py --lang fr`
+*-* Run with file dialog (Windows):  
+```
+seamly2d_translate.bat
+```
+- Run with file dialog (Windows, Linux, MacOS):  
+```
+python seamly2d_translate.py
+```
+- Run on a specific file (Windows, Linux, MacOS):  
+```
+python seamly2d_translate.py ../share/translations/seamly2d_cs_CZ.ts
+```
+- Run with file dialog and convert to a specific language (Windows, Linux, MacOS):  
+```
+python seamly2d_translate.py --lang fr
+```
 
 
 ## Notes
