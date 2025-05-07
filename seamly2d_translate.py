@@ -134,6 +134,23 @@ def translate_ts_file(ts_file, lang_code):
     else:
         print(f"No changes made to: {ts_file}")
 
+
+def open_file_in_editor(ts_file):
+    """Open the translated file in the system's default text editor."""
+    if sys.platform.startswith('win'):
+        os.system(f'notepad {ts_file}')
+    elif sys.platform.startswith('linux'):
+        # Try common Linux text editors in order of preference
+        editors = ['xdg-open', 'gedit', 'kate', 'mousepad', 'leafpad', 'nano', 'vim']
+        for editor in editors:
+            try:
+                os.system(f'{editor} {ts_file}')
+                break
+            except:
+                continue
+    elif sys.platform.startswith('darwin'):
+        os.system(f'textedit {ts_file}')
+
 # -----------------------------------------------------------------------------
 # Main
 # -----------------------------------------------------------------------------
@@ -163,10 +180,5 @@ if __name__ == "__main__":
     print(f"Target language: {lang_code}")
     translate_ts_file(ts_file, lang_code)
 
-    # open the translated file in notepad on windows or gedit on linux or textedit on mac
-    if sys.platform.startswith('win'):
-        os.system(f'notepad {ts_file}')
-    elif sys.platform.startswith('linux'):
-        os.system(f'gedit {ts_file}')
-    elif sys.platform.startswith('darwin'):
-        os.system(f'textedit {ts_file}')
+    # Open the translated file in the system's default text editor
+    open_file_in_editor(ts_file)
