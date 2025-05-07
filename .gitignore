@@ -33,4 +33,11 @@ ENV/
 
 # OS
 .DS_Store
+Thumbs.db
+
+# Git credentials
+.git-credentials
+
+# OS
+.DS_Store
 Thumbs.db 
