@@ -14,34 +14,35 @@ A Python script for translating Seamly2D interface text using Google Translate A
 ## Requirements
 
 - Python 3.x
-- Required packages (install using `pip install -r requirements.txt`):
+- Required packages 
   - googletrans==3.1.0a0
   - lxml>=4.9.0
 
 ## Installation
 
 - Clone repo
-- Install requirements in cloned repo directory `pip install -r requirements.txt`
+- Install requirements. Run in cloned repo directory: `pip install -r requirements.txt`
 - Linux: make the script executable: `chmod +x seamly2d_translate.py`
+
 
 ## Usage
 
-* If no filename is specified a popup file explorer appears to select a file
-* If no language_code is specified it uses the filename to derive the language_code
-* Run from command line as `python seamly2d_translate.bat`. Windows allows the option of clicking on the seamly2d_translate.bat file.
-
-### Windows
-* Double-click `seamly2d_translate.bat`
-* Or run from command line: `seamly2d_translate.bat [ts_file] [--lang language_code]`
-* Or run from command line using python: `python seamly2d_translate.py [ts_file] [--lang language_code]`  
-
-### Linux and MacOS
-* Run from command line using python: `python seamly2d_translate.py [ts_file] [--lang language_code]`  
-
-### Command Line
-```bash
+### Command Line for Windows, Linux, MacOS
+```
 python seamly2d_translate.py [ts_file] [--lang language_code]
 ```
+
+* If no filename is specified a popup file explorer appears to select a file
+* If no language_code is specified it uses the filename to derive the language_code
+* Run from command line. Windows also allows the option of double clicking on the **seamly2d_translate.bat** file. 
+
+
+### Windows .bat file option
+* Double-click `seamly2d_translate.bat`
+* Or run from command line:  
+```
+seamly2d_translate.bat [ts_file] [--lang language_code]
+```   
 
 ### Examples
 - Run with file dialog (Windows): `seamly2d_translate.bat`
@@ -55,15 +56,14 @@ python seamly2d_translate.py [ts_file] [--lang language_code]
 - The script only processes source text strings that have empty translation text
 - It does not overwrite existing translations
 - It removes the 'type="unfinished"' attribute when translation text is present
-- Make a backup copy of your .ts files before running the script
+- It overwrites the original .ts file
 - Update the `translations_dir` constant in the script as needed
 
 
-## Future scripts
+## Future script ideas
 
-- Copy an existing .ts file, delete translation strings, then run the seamly2d_translate.py file on it to create a new translation file.
-- Update a text string in a dialog and all .ts files then run the seamly2d_translate.py file on all .ts files. Good for fixing typos.
-
+- Copy an existing .ts file, delete translation strings, then run the seamly2d_translate.py file. Good for creating a new translation file.
+- Update a text string in a dialog and all .ts files, then run the seamly2d_translate.py file on all .ts files. Good for fixing typos.
 
 ## License
 
